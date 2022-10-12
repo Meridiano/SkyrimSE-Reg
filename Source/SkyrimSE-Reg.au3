@@ -62,6 +62,7 @@ Func ProcessEGS()
 				If (StringUpper(Json_Get($Object, ".AppName")) == $KeyName) Then
 					$Result[2] = "JSON_STRING"
 					$Result[3] = Json_Get($Object, "." & $ValueName)
+					ExitLoop
 				EndIf
 			Next
 		EndIf
