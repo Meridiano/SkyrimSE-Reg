@@ -14,7 +14,7 @@ Global $ConfigPath = @ScriptDir & "\" & StringTrimRight(@ScriptName, 3) & "ini"
 ShowInfo("[ Steam Path ]", ProcessSteam())
 ShowInfo("[ GOG Path ]", ProcessGOG())
 ShowInfo("[ EGS Path ]", ProcessEGS())
-WaitForEnter()
+WaitForEnter("Press ENTER to exit...")
 Exit
 
 Func ShowInfo($Title, ByRef $Data)
@@ -70,7 +70,8 @@ Func ProcessEGS()
 	Return $Result
 EndFunc
 
-Func WaitForEnter()
+Func WaitForEnter($Text)
+	ConsoleWrite($Text)
 	While True
 		Sleep(333)
 		Local $ConsoleInput = ConsoleRead(False, False)
